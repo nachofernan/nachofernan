@@ -1,0 +1,285 @@
+/* Panel de administración — misma paleta/tipografía que el blog público. */
+
+.admin, .admin input, .admin select, .admin button, .admin textarea {
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+.admin {
+	background: #fafafa;
+	color: #111;
+}
+
+.admin-contenedor {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Cabecera ---------------------------------------------------------------- */
+
+.admin-cabecera {
+	background: #1d1d1d;
+	color: #fff;
+}
+
+.admin-cabecera .admin-contenedor {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.admin-marca {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.admin-nav {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.admin-nav a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.admin-nav form {
+	display: inline;
+}
+
+.admin-nav button {
+	background: none;
+	border: none;
+	color: #fff;
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: inherit;
+	padding: 0;
+}
+
+/* Contenido ----------------------------------------------------------------*/
+
+.admin-contenido {
+	padding: 40px 0 80px;
+}
+
+.admin-aviso {
+	background: #eaf5ea;
+	border: 1px solid #bcdcbc;
+	padding: 10px 14px;
+	margin-bottom: 20px;
+}
+
+.admin-error {
+	color: #CA2017;
+	margin: 4px 0 0;
+	font-size: 14px;
+}
+
+.admin-encabezado-entrada {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+/* Botones ------------------------------------------------------------------*/
+
+.admin-boton,
+.admin-form button[type="submit"] {
+	display: inline-block;
+	background: #CA2017;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.admin-boton-peligro {
+	background: #fff;
+	color: #CA2017;
+	border: 1px solid #CA2017;
+	padding: 8px 16px;
+	cursor: pointer;
+}
+
+/* Formularios ----------------------------------------------------------------*/
+
+.admin-form {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	max-width: 640px;
+}
+
+.admin-form label {
+	font-weight: 700;
+	margin-top: 14px;
+}
+
+.admin-form input[type="text"],
+.admin-form input[type="email"],
+.admin-form input[type="password"],
+.admin-form input[type="file"],
+.admin-form select {
+	padding: 8px 10px;
+	border: 1px solid #ccc;
+	background: #fff;
+	font-size: 16px;
+}
+
+.admin-form-fila {
+	display: flex;
+	gap: 20px;
+}
+
+.admin-form-fila > div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.admin-form button[type="submit"] {
+	margin-top: 24px;
+	align-self: flex-start;
+}
+
+.admin-checkbox {
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+	font-weight: 400;
+}
+
+.admin-portada-actual {
+	max-width: 240px;
+	margin-bottom: 10px;
+}
+
+.admin-trix {
+	background: #fff;
+	border: 1px solid #ccc;
+	min-height: 300px;
+}
+
+/* Tabla de entradas ----------------------------------------------------------*/
+
+.admin-tabla {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.admin-tabla th,
+.admin-tabla td {
+	text-align: left;
+	padding: 10px 8px;
+	border-bottom: 1px solid #eee;
+}
+
+.admin-estado {
+	font-size: 13px;
+	padding: 2px 8px;
+	border-radius: 3px;
+}
+
+.admin-estado--publicada {
+	background: #eaf5ea;
+	color: #2b6b2b;
+}
+
+.admin-estado--borrador {
+	background: #f3ecd8;
+	color: #8a6d1d;
+}
+
+/* Paginación -------------------------------------------------------------- */
+
+.admin-paginacion-envoltorio {
+	margin-top: 20px;
+}
+
+.admin-paginacion {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 10px 20px;
+	font-size: 14px;
+}
+
+.admin-paginacion-enlace {
+	text-decoration: none;
+	color: #ca2017;
+	white-space: nowrap;
+}
+
+.admin-paginacion-enlace--deshabilitado {
+	color: #bbb;
+}
+
+.admin-paginacion-numeros {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px;
+}
+
+.admin-paginacion-pagina {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	padding: 0 6px;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #111;
+}
+
+.admin-paginacion-pagina:hover {
+	background: #eee;
+}
+
+.admin-paginacion-pagina--actual {
+	background: #ca2017;
+	color: #fff;
+}
+
+.admin-paginacion-pagina--actual:hover {
+	background: #ca2017;
+}
+
+.admin-paginacion-puntos {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	color: #999;
+}
+
+/* Login ----------------------------------------------------------------------*/
+
+.admin-auth-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.admin-login {
+	width: 100%;
+	max-width: 360px;
+	padding: 20px;
+}
+
+.admin-login-titulo {
+	font-family: 'Playfair Display', Georgia, serif;
+	margin-bottom: 20px;
+}

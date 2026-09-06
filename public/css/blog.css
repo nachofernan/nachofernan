@@ -1,0 +1,371 @@
+/* Tipografías (portadas del theme "lovecraft" original, mismos archivos woff2) */
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/lato-v23-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/lato-v23-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/lato-v23-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url('/fonts/lato-v23-latin-900.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/playfair-display-v29-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/playfair-display-v29-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/playfair-display-v29-latin-700.woff2') format('woff2');
+}
+
+/* Base ------------------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	background-color: #fafafa;
+	color: #111;
+	font-family: Georgia, serif;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+a { color: #ca2017; text-decoration: underline; }
+a:hover { text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+figure { margin: 0; }
+
+h1, h2, h3, h4 {
+	font-family: 'Playfair Display', Georgia, serif;
+	line-height: 130%;
+	font-weight: 700;
+	margin: 0;
+}
+
+.contenedor-ancho {
+	width: 1140px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+/* Cabecera del sitio ------------------------------------------------------ */
+
+.cabecera {
+	background: #fff;
+	padding: 35px 0;
+	text-align: center;
+}
+
+.titulo-blog {
+	font-size: 2.25em;
+}
+
+.titulo-blog a { color: inherit; text-decoration: none; }
+.titulo-blog a:hover { color: #ca2017; }
+
+.bajada-blog {
+	font-size: 1.1em;
+	font-style: italic;
+	font-weight: 400;
+	margin: 15px 0 0;
+}
+
+/* Navegación --------------------------------------------------------------*/
+
+.navegacion {
+	background: #fff;
+	border-top: 1px solid #ddd;
+}
+
+.menu-lista {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.menu-lista li {
+	display: inline-block;
+	margin: 0 20px;
+	position: relative;
+}
+
+.menu-lista li + li:before {
+	content: '/';
+	color: #bbb;
+	position: absolute;
+	left: -25px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.menu-lista a {
+	display: block;
+	padding: 24px 0;
+	color: inherit;
+	text-decoration: none;
+}
+
+.menu-lista a:hover,
+.menu-lista a.activo {
+	color: #ca2017;
+}
+
+/* Imagen de cabecera ------------------------------------------------------ */
+
+.imagen-cabecera {
+	margin: 0;
+	max-height: 350px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+}
+
+.imagen-cabecera img {
+	width: 100%;
+	visibility: hidden;
+}
+
+.imagen-cabecera--propia {
+	max-height: none;
+}
+
+/* Layout de contenido (sin sidebar: el sitio real la oculta por CSS) ------*/
+
+.contenido {
+	width: 1140px;
+	max-width: 90%;
+	margin: -120px auto 0;
+}
+
+/* Tarjeta de entrada (listado) --------------------------------------------*/
+
+.entrada {
+	border: 1px solid #ddd;
+	background-color: #fff;
+	display: block;
+}
+
+.entrada + .entrada { margin-top: 60px; }
+
+.entrada-portada img { width: 100%; }
+
+.entrada-cuerpo {
+	width: 100%;
+	max-width: 70%;
+	padding: 60px 0;
+	margin: 0 auto;
+}
+
+.entrada-titulo {
+	font-size: 2.6em;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+
+.entrada-titulo a { color: inherit; text-decoration: none; }
+.entrada-titulo a:hover { text-decoration: underline; }
+
+.entrada-contenido { margin-top: 50px; }
+.entrada-contenido p:first-child { margin-top: 0; }
+.entrada-contenido p { margin: 0 0 1.5em; }
+
+/* Citas (bloque "pullquote" de WordPress, formato usado en las entradas tipo cita) */
+
+.entrada-contenido blockquote {
+	padding: 30px 30px 30px 90px;
+	background: #fafafa;
+	border: 1px solid #eee;
+	position: relative;
+	font-size: 0.95em;
+	font-style: italic;
+}
+
+.entrada-contenido blockquote:after {
+	content: '”';
+	width: 90px;
+	font-family: 'Georgia', serif;
+	font-size: 72px;
+	line-height: 72px;
+	font-weight: 700;
+	font-style: normal;
+	text-align: center;
+	color: #ca2017;
+	position: absolute;
+	top: 31px;
+	left: 0;
+}
+
+.wp-block-pullquote blockquote {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.wp-block-pullquote blockquote:after {
+	content: none;
+}
+
+.wp-block-pullquote blockquote p {
+	font-size: 1.25em;
+	margin-bottom: 1em;
+}
+
+/* Paginación ---------------------------------------------------------- */
+
+.paginacion { margin-top: 40px; }
+
+.paginacion-nav {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 10px 20px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.paginacion-enlace {
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.paginacion-enlace--deshabilitado {
+	color: #bbb;
+}
+
+.paginacion-numeros {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px;
+}
+
+.paginacion-pagina {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	padding: 0 6px;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #111;
+}
+
+.paginacion-pagina:hover {
+	background: #efefef;
+}
+
+.paginacion-pagina--actual {
+	background: #ca2017;
+	color: #fff;
+}
+
+.paginacion-pagina--actual:hover {
+	background: #ca2017;
+}
+
+.paginacion-puntos {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	color: #999;
+}
+
+/* Pie de página ---------------------------------------------------------- */
+
+.pie {
+	background: #262626;
+	margin-top: 60px;
+	padding: 40px 0;
+}
+
+.pie-interior {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.pie-marca {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.5em;
+	font-weight: 700;
+	color: #fff;
+	margin: 0;
+}
+
+.pie-lista {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 30px;
+	font-size: 0.9em;
+}
+
+.pie-lista a {
+	color: #ccc;
+	text-decoration: none;
+}
+
+.pie-lista a:hover {
+	color: #fff;
+}
+
+/* Responsive ---------------------------------------------------------- */
+
+@media (max-width: 780px) {
+	.contenido { margin-top: 20px; }
+	.menu-lista li { margin: 0 12px; }
+	.entrada-cuerpo { padding: 30px 0; max-width: 100%; }
+	.paginacion-nav { gap: 8px 12px; }
+	.pie-interior { flex-direction: column; align-items: flex-start; }
+}
