@@ -30,7 +30,7 @@ class EntradaController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $datos = $this->validarDatos($request);
-        $datos['slug'] = $this->generarSlug($datos['titulo']);
+        $datos['slug'] = $this->generarSlug($datos['titulo'], $datos['contenido']);
         $datos['publicada_en'] = now();
 
         if ($request->hasFile('portada')) {
@@ -84,7 +84,7 @@ class EntradaController extends Controller
     private function validarDatos(Request $request): array
     {
         return $request->validate([
-            'titulo' => ['required', 'string', 'max:255'],
+            'titulo' => ['required_unless:tipo,cita', 'nullable', 'string', 'max:255'],
             'categoria_id' => ['required', 'exists:categorias,id'],
             'tipo' => ['required', 'in:entrada,cita'],
             'estado' => ['required', 'in:borrador,publicada'],
@@ -93,9 +93,14 @@ class EntradaController extends Controller
         ]);
     }
 
-    private function generarSlug(string $titulo): string
+    private function generarSlug(?string $titulo, string $contenido): string
     {
-        $base = Str::slug($titulo);
+        $base = Str::slug($titulo ?: Str::limit(strip_tags($contenido), 50, ''));
+
+        if ($base === '') {
+            $base = 'cita-'.now()->format('Ymd-His');
+        }
+
         $slug = $base;
         $numero = 2;
 

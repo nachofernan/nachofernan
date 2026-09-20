@@ -212,6 +212,17 @@ h1, h2, h3, h4 {
 .entrada-contenido p:first-child { margin-top: 0; }
 .entrada-contenido p { margin: 0 0 1.5em; }
 
+/* Entradas de tipo "cita": texto unificado, sin el título ni el desglose habitual */
+
+.entrada-cita .entrada-contenido {
+	margin-top: 0;
+	padding: 40px 0;
+	font-size: 1.6em;
+	font-style: italic;
+}
+
+.entrada-cita .entrada-contenido p:last-child { margin-bottom: 0; }
+
 /* Citas (bloque "pullquote" de WordPress, formato usado en las entradas tipo cita) */
 
 .entrada-contenido blockquote {

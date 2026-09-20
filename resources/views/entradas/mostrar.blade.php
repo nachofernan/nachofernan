@@ -1,6 +1,6 @@
 @extends('layouts.blog')
 
-@section('titulo', $entrada->titulo.' — '.config('app.name'))
+@section('titulo', $entrada->titulo ? $entrada->titulo.' — '.config('app.name') : config('app.name'))
 
 @section('contenido')
 
@@ -8,7 +8,9 @@
 
 		<div class="entrada-cuerpo">
 
-			<h1 class="entrada-titulo">{{ $entrada->titulo }}</h1>
+			@unless ($entrada->esCita())
+				<h1 class="entrada-titulo">{{ $entrada->titulo }}</h1>
+			@endunless
 
 			<div class="entrada-contenido">
 				{!! $entrada->contenido !!}

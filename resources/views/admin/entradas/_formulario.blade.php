@@ -24,7 +24,7 @@
 
 				<input type="text" id="titulo" name="titulo" class="admin-editor-titulo" aria-label="Título"
 					value="{{ old('titulo', $entrada->titulo) }}"
-					placeholder="Título de la entrada" required autofocus>
+					placeholder="Título de la entrada" autofocus>
 				@error('titulo') <p class="admin-error">{{ $message }}</p> @enderror
 
 				<trix-editor input="contenido" toolbar="barra-contenido" id="contenido-editor" class="admin-trix" placeholder="Escribí acá…"></trix-editor>
