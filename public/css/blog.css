@@ -217,11 +217,18 @@ h1, h2, h3, h4 {
 .entrada-cita .entrada-contenido {
 	margin-top: 0;
 	padding: 40px 0;
-	font-size: 1.6em;
+	font-size: 1.9em;
 	font-style: italic;
 }
 
 .entrada-cita .entrada-contenido p:last-child { margin-bottom: 0; }
+
+/* Neutraliza los multiplicadores de tamaño del blockquote/pullquote de WordPress
+   (0.95em * 1.25em) para que las citas migradas queden al mismo tamaño que las nuevas */
+.entrada-cita .entrada-contenido blockquote,
+.entrada-cita .entrada-contenido blockquote p {
+	font-size: 1em;
+}
 
 /* Citas (bloque "pullquote" de WordPress, formato usado en las entradas tipo cita) */
 
